@@ -1,57 +1,124 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
+/* ===== Reset e Estrutura ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Main ===== */
+main {
+  flex: 1; /* ocupa o espaço disponível e empurra o footer para baixo */
+  padding: 20px;
+}
+
+/* ===== Produtos ===== */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.products article {
+  flex: 1 1 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+.products img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
   nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  .products {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
   .products article {
-    flex: 1 1 300px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
+    flex: 1 1 100%;
+    max-width: 90%;
   }
-  
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+
   .products img {
-    width: 100%;
-    max-width: 200px;
+    max-width: 150px;
   }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+
+  footer p {
+    font-size: 0.8rem;
   }
+}
